@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="Deps">
+    <page>/Departments.jsf</page>
+  </view>
+  <view id="Search">
+    <page>/Search.jsf</page>
+  </view>
+  <view id="Details">
+    <page>/EmployeeDetails.jsf</page>
+  </view>
+  <control-flow-rule id="__8">
+    <from-activity-id>Deps</from-activity-id>
+    <control-flow-case id="__9">
+      <from-outcome>Serach</from-outcome>
+      <to-activity-id>Search</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__14">
+      <from-outcome>Details</from-outcome>
+      <to-activity-id>Details</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__10">
+    <from-activity-id>Search</from-activity-id>
+    <control-flow-case id="__11">
+      <from-outcome>Backs</from-outcome>
+      <to-activity-id>Deps</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__12">
+    <from-activity-id>Details</from-activity-id>
+    <control-flow-case id="__13">
+      <from-outcome>Backd</from-outcome>
+      <to-activity-id>Deps</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>
